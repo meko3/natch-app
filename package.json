@@ -2,8 +2,8 @@
   "name": "sample2",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
-    "babel-preset-react": "^6.24.1",
+    "@rails/webpacker": "^4.0.0-rc.2",
+    "babel-preset-react": "^7.0.0-beta.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
@@ -11,8 +11,23 @@
   "devDependencies": {
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "ts-loader": "^5.3.2",
     "typescript": "^3.2.2",
-    "webpack-dev-server": "2.11.2"
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.2"
+  },
+  "scripts": {
+    "debug": "bin/webpack-dev-server --mode=development",
+    "build": "bin/webpack-dev-server --mode=production",
+    "start": "rails s",
+    "upgrade:webpacker": "bundle update webpacker && rails webpacker:binstubs && yarn upgrade @rails/webpacker --latest && yarn add webpack-dev-server@^3.1.2"
   }
 }
