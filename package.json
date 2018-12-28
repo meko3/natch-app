@@ -1,8 +1,14 @@
 {
   "name": "sample2",
   "private": true,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001"
+    }
+  },
   "dependencies": {
     "@rails/webpacker": "^4.0.0-rc.2",
+    "axios": "^0.18.0",
     "babel-preset-react": "^7.0.0-beta.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

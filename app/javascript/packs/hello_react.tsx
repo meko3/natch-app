@@ -4,22 +4,49 @@
 
 import * as React from "react"
 import * as ReactDOM from "react-dom"
+import axios from "axios";
 
 interface HelloProps {
   name: string;
+  user: string;
 }
 
-const Hello: React.SFC<HelloProps> = (props) => (
-  <div>Hello {props.name}!</div>
-)
+class Sample {
 
-Hello.defaultProps = {
-  name: "David",
+  public static user: string;
+
+  constructor() {
+    Sample.user = "";
+  }
+
+  componentWillMount() {
+    Sample.getData();
+  }
+
+  componentWillReceiveProps() {
+    
+  }
+  
+  public static getData() {
+    axios.get("http://localhost:3000/api/v1/user").then((res) => {
+      console.log(res);
+      Sample.user = res.data.name as string;
+    });
+  }
+
+  public static Hello: React.SFC<HelloProps> = (props) => (
+    <div>
+      <div>Hello {props.name}!</div>
+      <div>Hello {props.user}!</div>
+      <button onClick={Sample.getData}>RELOAD</button>
+    </div>
+  )
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Sample.Hello name="React" user={Sample.user} />,
     document.body.appendChild(document.createElement("div")),
   )
 })
