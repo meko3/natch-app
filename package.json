@@ -1,5 +1,5 @@
 {
-  "name": "sample2",
+  "name": "natch-app",
   "private": true,
   "proxy": {
     "/api": {
@@ -9,14 +9,22 @@
   "dependencies": {
     "@rails/webpacker": "^4.0.0-rc.2",
     "axios": "^0.18.0",
+    "@storybook/react": "^4.1.4",
     "babel-preset-react": "^7.0.0-beta.3",
+    "connect-history-api-fallback": "^1.5.0",
+    "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
+    "@types/storybook__react": "^4.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -34,6 +42,8 @@
     "debug": "bin/webpack-dev-server --mode=development",
     "build": "bin/webpack-dev-server --mode=production",
     "start": "rails s",
-    "upgrade:webpacker": "bundle update webpacker && rails webpacker:binstubs && yarn upgrade @rails/webpacker --latest && yarn add webpack-dev-server@^3.1.2"
+    "upgrade:webpacker": "bundle update webpacker && rails webpacker:binstubs && yarn upgrade @rails/webpacker --latest && yarn add webpack-dev-server@^3.1.2",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
