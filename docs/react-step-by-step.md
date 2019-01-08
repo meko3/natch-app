@@ -18,3 +18,8 @@
 - compileしたらjsになるのでifとかforも使えるよ
 - DOMがレンダリングする前にエスケープするのでXSSにつよい
 - ES6とJSXコードの両方が適切に表示されるようにBabelの言語定義を使うのを勧める
+
+3. Rendering Elements
+- <div id="root"></div>がルート
+  - 直接レンダリングできないぞ...?
+
