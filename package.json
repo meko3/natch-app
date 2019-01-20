@@ -12,7 +12,8 @@
     "babel-preset-react": "^7.0.0-beta.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-on-rails": "11.2.2"
   },
   "devDependencies": {
     "@types/react": "^16.7.18",
