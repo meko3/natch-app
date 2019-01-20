@@ -6,10 +6,13 @@ export default class HelloWorld extends React.Component {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
+  public props: { name?: string, [x: string]: any } = {};
+  public state: { name?: string };
+
   /**
    * @param props - Comes from your rails view.
    */
-  constructor(props) {
+  constructor(props: { name: string, [x: string]: any }) {
     super(props);
 
     // How to set initial state in ES6 class syntax
@@ -17,7 +20,7 @@ export default class HelloWorld extends React.Component {
     this.state = { name: this.props.name };
   }
 
-  updateName = (name) => {
+  updateName = (name: string) => {
     this.setState({ name });
   };
 
